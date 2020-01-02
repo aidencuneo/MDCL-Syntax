@@ -2,6 +2,14 @@
 
 This extension adds syntax highlighting for the language MDC.
 
+GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
+
+## Screenshots
+--------------
+
+![Screenshot 1](https://github.com/aidencuneo/MDCL-Syntax/raw/master/images/screenshot1.png)
+
+
 ## Releases
 -----------
 

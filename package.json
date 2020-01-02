@@ -4,7 +4,7 @@
     "description": "Syntax highlighting for MDCL",
     "version": "1.2.2",
     "publisher": "aidencuneo",
-    "repository": "",
+    "repository": "https://github.com/aidencuneo/MDCL-Syntax",
     "engines": {
         "vscode": "^1.41.0"
     },
