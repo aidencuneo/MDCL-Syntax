@@ -1,0 +1,36 @@
+{
+    "name": "mdc-lang",
+    "displayName": "MDC Lang",
+    "description": "Syntax highlighting for MDCL",
+    "version": "1.2.2",
+    "publisher": "aidencuneo",
+    "repository": "",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "mdcl",
+                "aliases": [
+                    "MDCL",
+                    "mdcl"
+                ],
+                "extensions": [
+                    ".mdcl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "mdcl",
+                "scopeName": "source.mdcl",
+                "path": "./syntaxes/mdc.tmLanguage.json"
+            }
+        ]
+    }
+}

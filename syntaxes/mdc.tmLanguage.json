@@ -1,0 +1,106 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MDCL",
+	"patterns": [
+		{"include": "#keywords"},
+		{"include": "#builtins"},
+		{"include": "#strings"},
+		{"include": "#rawstrings"},
+		{"include": "#regexstringdouble"},
+		{"include": "#regexstringsingle"},
+		{"include": "#greyopers"},
+		{"include": "#evaluations"},
+		{"include": "#vars"},
+		{"include": "#integers"},
+		{"include": "#explicitargs"}
+	],
+	"tokenColors": {},
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.mdcl",
+				"match": "\\b(DEFINE|GOTO|IMPORT|NEW|IF|YIELD|INTEGER|FLOAT|STRING|REGEX|BOOLEAN|NULL|READ|LEN|READFILE|TYPE|NOT|EXIT)\\b"
+			}]
+		},
+		"builtins": {
+			"patterns": [{
+				"name": "keyword.mdcl",
+				"match": "\\b(ADD|SUB|MULT|DIV|PWR|EQ|LT|GT|LE|GE|INDEX)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.mdcl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [{
+				"name": "constant.character.escape.mdcl",
+				"match": "\\\\."
+			}]
+		},
+		"rawstrings": {
+			"name": "string.quoted.single.mdcl",
+			"begin": "'",
+			"end": "'"
+		},
+		"regexstringdouble": {
+			"name": "keyword.mdcl",
+			"begin": "\\bRE\"",
+			"end": "\"",
+			"patterns": [{
+				"name": "constant.character.escape.mdcl",
+				"match": "."
+			}]
+		},
+		"regexstringsingle": {
+			"name": "keyword.mdcl",
+			"begin": "\\bRE'",
+			"end": "'",
+			"patterns": [{
+				"name": "constant.character.escape.mdcl",
+				"match": "."
+			}]
+		},
+		"greyopers": {
+			"patterns": [{
+				"name": "keyword.mdcl",
+				"match": "(:|;|<|>|\\[|\\]|{|})"
+			}]
+		},
+		"evaluations": {
+			"name": "constant.language.mdcl",
+			"begin": "`",
+			"end": "`",
+			"patterns": [{
+				"name": "constant.character.escape.mdcl",
+				"match": "\\$\\{[0-9]*\\}"
+			}]
+		},
+		"vars": {
+			"begin": "\\(",
+			"end": "\\)",
+			"patterns": [
+				{
+					"name": "markup.heading.mdcl",
+					"match": "[a-fA-F0-9]+"
+				},
+				{
+					"name": "invalid.illegal.mdcl",
+					"match": "[^a-fA-F0-9]+"
+				}
+			]
+		},
+		"integers": {
+			"patterns": [{
+				"name": "constant.numeric.mdcl",
+				"match": "(-|\\+)*[0-9]+"
+			}]
+		},
+		"explicitargs": {
+			"patterns": [{
+				"name": "constant.character.escape.mdcl",
+				"match": "\\$[0-9]+"
+			}]
+		}
+	},
+	"scopeName": "source.mdcl"
+}
