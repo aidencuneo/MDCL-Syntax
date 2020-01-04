@@ -3,7 +3,6 @@
 	"name": "MDCL",
 	"patterns": [
 		{"include": "#keywords"},
-		{"include": "#builtins"},
 		{"include": "#strings"},
 		{"include": "#rawstrings"},
 		{"include": "#regexstringdouble"},
@@ -17,16 +16,28 @@
 	"tokenColors": {},
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.mdcl",
-				"match": "\\b(DEFINE|GOTO|IMPORT|NEW|IF|YIELD|INTEGER|FLOAT|STRING|REGEX|BOOLEAN|NULL|READ|LEN|READFILE|TYPE|NOT|EXIT)\\b"
-			}]
-		},
-		"builtins": {
-			"patterns": [{
-				"name": "keyword.mdcl",
-				"match": "\\b(ADD|SUB|MULT|DIV|PWR|EQ|LT|GT|LE|GE|INDEX)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.mdcl",
+					"match": "\\b(AND|OR|TO|SKIP|DEFINE|GOTO|IMPORT|NEW|IF|ELIF|ELSE|WHILE|FOR|YIELD|READ|LEN|READFILE|TYPE|ECHO|NOT|EXIT)\\b"
+				},
+				{
+					"name": "keyword.mdcl",
+					"match": "\\b(ADD|SUB|MULT|DIV|PWR|EQ|LT|GT|LE|GE|INDEX|HAS)\\b"
+				},
+				{
+					"name": "entity.name.function.mdcl",
+					"match": "\\b(Integer|Float|String|RegexString|Boolean|Array|Null)\\b"
+				},
+				{
+					"name": "entity.name.tag.mdcl",
+					"match": "(\\*|@)"
+				},
+				{
+					"name": "entity.name.type.mdcl",
+					"match": "\\b(INTEGER|FLOAT|STRING|REGEX|BOOLEAN|ARRAY|NULL)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.mdcl",
