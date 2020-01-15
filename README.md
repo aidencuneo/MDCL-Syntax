@@ -30,4 +30,10 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 > Updated keywords, added IF-ELIF-ELSE chains, WHILE loops, and FOR loops. Changed the colouring for a few different tokens,
 > including typenames, type changing keywords, and '*' and '@'.
 
+> ## 1.3.0
+> Major update to keywords and operators, added mathematical operators to operator list (+, -, *, /, ^, %, =, |).
+> Built-in global variables now have their own syntax highlighting.
+> Updated built-in functions list to include newly added functions.
+> Updated datatypes.
+
 ### While MDC goes through the course of development, updates will be released to match the new syntax of the language.

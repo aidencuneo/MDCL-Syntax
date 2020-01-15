@@ -19,7 +19,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.mdcl",
-					"match": "\\b(AND|OR|TO|SKIP|DEFINE|GOTO|IMPORT|NEW|IF|ELIF|ELSE|WHILE|FOR|YIELD|READ|LEN|READFILE|TYPE|ECHO|NOT|EXIT)\\b"
+					"match": "\\b(AND|OR|ONLY|TO|SKIP|NEW|IF|ELIF|ELSE|WHILE|FOR|TRY|CATCH|DEL|IMPORT|PYIMPORT|DEFINE|SIG|RAISE|ERRORTAG|YIELD)\\b"
+				},
+				{
+					"name": "entity.name.method.mdcl",
+					"match": "\\b(READ|LEN|READFILE|WRITEFILE|TYPE|ECHO|WAIT|GLOBALS|LOCALS|ARGV|NOT|EXIT)"
 				},
 				{
 					"name": "keyword.mdcl",
@@ -27,15 +31,15 @@
 				},
 				{
 					"name": "entity.name.function.mdcl",
-					"match": "\\b(Integer|Float|String|RegexString|Boolean|Array|Null)\\b"
+					"match": "\\b(Integer|Float|String|RegexString|Boolean|Array|Alphabet|Null)\\b"
 				},
 				{
 					"name": "entity.name.tag.mdcl",
-					"match": "(\\*|@)"
+					"match": "(\\*|@|FILE|LINE|\\_|\\,|ERR|PATH)"
 				},
 				{
 					"name": "entity.name.type.mdcl",
-					"match": "\\b(INTEGER|FLOAT|STRING|REGEX|BOOLEAN|ARRAY|NULL)\\b"
+					"match": "\\b(INTEGER|FLOAT|STRING|REGEX|BOOLEAN|ARRAY|ALPHABET|NULL)\\b"
 				}
 			]
 		},
@@ -74,7 +78,7 @@
 		"greyopers": {
 			"patterns": [{
 				"name": "keyword.mdcl",
-				"match": "(:|;|<|>|\\[|\\]|{|})"
+				"match": "(:|;|<|>|\\[|\\]|\\{|\\}|\\+|-|\\*|/|\\^|%|=|\\|)"
 			}]
 		},
 		"evaluations": {
@@ -85,20 +89,6 @@
 				"name": "constant.character.escape.mdcl",
 				"match": "\\$\\{[0-9]*\\}"
 			}]
-		},
-		"vars": {
-			"begin": "\\(",
-			"end": "\\)",
-			"patterns": [
-				{
-					"name": "markup.heading.mdcl",
-					"match": "[a-fA-F0-9]+"
-				},
-				{
-					"name": "invalid.illegal.mdcl",
-					"match": "[^a-fA-F0-9]+"
-				}
-			]
 		},
 		"integers": {
 			"patterns": [{
