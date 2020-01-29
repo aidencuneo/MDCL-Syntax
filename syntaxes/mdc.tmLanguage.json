@@ -3,14 +3,18 @@
 	"name": "MDCL",
 	"patterns": [
 		{"include": "#keywords"},
+		{"include": "#blockComments"},
 		{"include": "#strings"},
 		{"include": "#rawstrings"},
 		{"include": "#regexstringdouble"},
 		{"include": "#regexstringsingle"},
+		{"include": "#slices"},
 		{"include": "#greyopers"},
+		{"include": "#squigglybrackets"},
 		{"include": "#evaluations"},
 		{"include": "#vars"},
 		{"include": "#integers"},
+		{"include": "#floats"},
 		{"include": "#explicitargs"}
 	],
 	"tokenColors": {},
@@ -19,29 +23,34 @@
 			"patterns": [
 				{
 					"name": "keyword.control.mdcl",
-					"match": "\\b(AND|OR|ONLY|TO|SKIP|NEW|IF|ELIF|ELSE|WHILE|FOR|TRY|CATCH|DEL|IMPORT|PYIMPORT|DEFINE|SIG|RAISE|ERRORTAG|YIELD)\\b"
+					"match": "\\b(AND|OR|ONLY|TO|SKIP|NEW|IF|ELIF|ELSE|WHILE|FOR|TRY|CATCH|DEL|IMPORT|UNIMPORT|DEFINE|SIG|RAISE|ERRORTAG|YIELD)\\b"
 				},
 				{
 					"name": "entity.name.method.mdcl",
-					"match": "\\b(READ|LEN|READFILE|WRITEFILE|TYPE|ECHO|WAIT|GLOBALS|LOCALS|ARGV|NOT|EXIT)"
+					"match": "\\b(READ|LEN|READFILE|WRITEFILE|TYPE|ECHO|WAIT|GLOBALS|LOCALS|ARGV|NOT|EXIT)\\b"
 				},
 				{
 					"name": "keyword.mdcl",
-					"match": "\\b(ADD|SUB|MULT|DIV|PWR|EQ|LT|GT|LE|GE|INDEX|HAS)\\b"
+					"match": "\\b(ADD|SUB|MULT|DIV|PWR|EQ|LT|GT|LE|GE|INDEX|HAS|CALL)\\b"
 				},
 				{
 					"name": "entity.name.function.mdcl",
-					"match": "\\b(Integer|Float|String|RegexString|Boolean|Array|Alphabet|Null)\\b"
+					"match": "\\b(Integer|Float|String|RegexString|Timedelta|Date|Slice|Boolean|Array|Alphabet|Null)\\b"
 				},
 				{
 					"name": "entity.name.tag.mdcl",
-					"match": "(\\*|@|FILE|LINE|\\_|\\,|ERR|PATH)"
+					"match": "(\\*|@|\\!|FILE|LINE|\\_|\\,|ERR|PATH)"
 				},
 				{
 					"name": "entity.name.type.mdcl",
-					"match": "\\b(INTEGER|FLOAT|STRING|REGEX|BOOLEAN|ARRAY|ALPHABET|NULL)\\b"
+					"match": "\\b(INTEGER|FLOAT|STRING|REGEX|TIMEDELTA|DATE|SLICE|BOOLEAN|ARRAY|ALPHABET|NULL)\\b"
 				}
 			]
+		},
+		"blockComments": {
+			"name": "comment.block.mdcl",
+			"begin": "/\\*",
+			"end": "\\*/"
 		},
 		"strings": {
 			"name": "string.quoted.double.mdcl",
@@ -75,10 +84,25 @@
 				"match": "."
 			}]
 		},
+		"slices": {
+			"name": "constant.language.mdcl",
+			"begin": "\\(",
+			"end": "\\)",
+			"patterns": [{
+				"name": "string.quoted.mdcl",
+				"match": ":"
+			}]
+		},
 		"greyopers": {
 			"patterns": [{
 				"name": "keyword.mdcl",
-				"match": "(:|;|<|>|\\[|\\]|\\{|\\}|\\+|-|\\*|/|\\^|%|=|\\|)"
+				"match": "(:|;|<|>|\\[|\\]|\\+|-|\\*|/|\\^|%|=|\\|)"
+			}]
+		},
+		"squigglybrackets": {
+			"patterns": [{
+				"name": "constant.language.mdcl",
+				"match": "(\\{|\\})"
 			}]
 		},
 		"evaluations": {
@@ -94,6 +118,12 @@
 			"patterns": [{
 				"name": "constant.numeric.mdcl",
 				"match": "(-|\\+)*[0-9]+"
+			}]
+		},
+		"floats": {
+			"patterns": [{
+				"name": "constant.numeric.mdcl",
+				"match": "(-|\\+)*[0-9]*\\.[0-9]+"
 			}]
 		},
 		"explicitargs": {

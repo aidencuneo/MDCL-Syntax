@@ -36,4 +36,10 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 > Updated built-in functions list to include newly added functions.
 > Updated datatypes.
 
+> ## 1.3.3
+> Many colour changes for existing keywords and operators.
+> Added block comments.
+> Updated built-in functions and datatypes again to match the new update of MDCL.
+> Added Slices.
+
 ### While MDC goes through the course of development, updates will be released to match the new syntax of the language.
