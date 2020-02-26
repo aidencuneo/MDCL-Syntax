@@ -1,4 +1,4 @@
-# MDC Lang README
+# MDCL Syntax README
 
 This extension adds syntax highlighting for the language MDC.
 
@@ -14,7 +14,7 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 -----------
 
 > ## 1.0.0
-> Initial release of MDC Lang.
+> Initial release of MDCL.
 
 > ## 1.1.0
 > Updated keywords and syntax features.
@@ -42,4 +42,9 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 > Updated built-in functions and datatypes again to match the new update of MDCL.
 > Added Slices.
 
-### While MDC goes through the course of development, updates will be released to match the new syntax of the language.
+> ## 1.4.0
+> All uppercase keywords, statements, and function names have been renamed to lowercase.
+> Switched [] and ().
+> Updated keywords and changed bracket statements a little.
+
+### While MDCL goes through the course of development, updates will be released to match the new syntax of the language.

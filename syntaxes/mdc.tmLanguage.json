@@ -8,7 +8,7 @@
 		{"include": "#rawstrings"},
 		{"include": "#regexstringdouble"},
 		{"include": "#regexstringsingle"},
-		{"include": "#slices"},
+		{"include": "#bracketstatement"},
 		{"include": "#greyopers"},
 		{"include": "#squigglybrackets"},
 		{"include": "#evaluations"},
@@ -23,19 +23,19 @@
 			"patterns": [
 				{
 					"name": "keyword.control.mdcl",
-					"match": "\\b(AND|OR|ONLY|TO|SKIP|NEW|IF|ELIF|ELSE|WHILE|FOR|TRY|CATCH|DEL|IMPORT|UNIMPORT|DEFINE|SIG|RAISE|ERRORTAG|YIELD)\\b"
+					"match": "\\b(and|or|only|to|skip|new|if|elif|else|while|for|try|catch|del|import|define|sig|raise|errortag|yield)\\b"
 				},
 				{
 					"name": "entity.name.method.mdcl",
-					"match": "\\b(READ|LEN|READFILE|WRITEFILE|TYPE|ECHO|WAIT|GLOBALS|LOCALS|ARGV|NOT|EXIT)\\b"
+					"match": "\\b(read|len|readfile|writefile|type|echo|wait|globals|locals|argv|not|exit)\\b"
 				},
 				{
 					"name": "keyword.mdcl",
-					"match": "\\b(ADD|SUB|MULT|DIV|PWR|EQ|LT|GT|LE|GE|INDEX|HAS|CALL)\\b"
+					"match": "\\b(add|sub|mult|div|pwr|eq|lt|gt|le|ge|has|call)\\b"
 				},
 				{
 					"name": "entity.name.function.mdcl",
-					"match": "\\b(Integer|Float|String|RegexString|Timedelta|Date|Slice|Boolean|Array|Alphabet|Null)\\b"
+					"match": "\\b(Integer|Float|String|RegexString|Timedelta|Date|Slice|Boolean|Array|Alphabet|Null|BreakToken)\\b"
 				},
 				{
 					"name": "entity.name.tag.mdcl",
@@ -43,7 +43,7 @@
 				},
 				{
 					"name": "entity.name.type.mdcl",
-					"match": "\\b(INTEGER|FLOAT|STRING|REGEX|TIMEDELTA|DATE|SLICE|BOOLEAN|ARRAY|ALPHABET|NULL)\\b"
+					"match": "\\b(integer|float|string|regex|timedelta|date|slice|boolean|array|null)\\b"
 				}
 			]
 		},
@@ -84,19 +84,19 @@
 				"match": "."
 			}]
 		},
-		"slices": {
+		"bracketstatement": {
 			"name": "constant.language.mdcl",
-			"begin": "\\(",
-			"end": "\\)",
+			"begin": "\\[",
+			"end": "\\]",
 			"patterns": [{
 				"name": "string.quoted.mdcl",
-				"match": ":"
+				"match": "(:|\\,)"
 			}]
 		},
 		"greyopers": {
 			"patterns": [{
 				"name": "keyword.mdcl",
-				"match": "(:|;|<|>|\\[|\\]|\\+|-|\\*|/|\\^|%|=|\\|)"
+				"match": "(:|;|<|>|\\(|\\)|\\+|-|\\*|/|\\^|%|=|\\|)"
 			}]
 		},
 		"squigglybrackets": {
