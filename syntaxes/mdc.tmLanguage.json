@@ -10,8 +10,8 @@
 		{"include": "#regexstringsingle"},
 		{"include": "#bracketstatement"},
 		{"include": "#greyopers"},
-		{"include": "#squigglybrackets"},
 		{"include": "#evaluations"},
+		{"include": "#booleans"},
 		{"include": "#vars"},
 		{"include": "#integers"},
 		{"include": "#floats"},
@@ -99,12 +99,6 @@
 				"match": "(:|;|<|>|\\(|\\)|\\+|-|\\*|/|\\^|%|=|\\|)"
 			}]
 		},
-		"squigglybrackets": {
-			"patterns": [{
-				"name": "constant.language.mdcl",
-				"match": "(\\{|\\})"
-			}]
-		},
 		"evaluations": {
 			"name": "constant.language.mdcl",
 			"begin": "`",
@@ -112,6 +106,12 @@
 			"patterns": [{
 				"name": "constant.character.escape.mdcl",
 				"match": "\\$\\{[0-9]*\\}"
+			}]
+		},
+		"booleans": {
+			"patterns": [{
+				"name": "constant.language.mdcl",
+				"match": "\\b(true|false)\\b"
 			}]
 		},
 		"integers": {
