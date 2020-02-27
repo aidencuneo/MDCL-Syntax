@@ -1,0 +1,11 @@
+1.  Don't change version number in package.json
+
+2.  Commit changes to GitHub
+
+3.  Use `vsce publish version_number` where version_number is new version to
+    publish using ONLY the following characters: '.0123456789'
+
+4.  Commit changes again to GitHub (version number in package.json will now
+    be the correct and new version number)
+
+Done.
