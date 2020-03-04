@@ -9,6 +9,7 @@
 		{"include": "#regexstringdouble"},
 		{"include": "#regexstringsingle"},
 		{"include": "#bracketstatement"},
+		{"include": "#functions"},
 		{"include": "#greyopers"},
 		{"include": "#evaluations"},
 		{"include": "#booleans"},
@@ -23,7 +24,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.mdcl",
-					"match": "\\b(and|or|only|to|skip|new|if|elif|else|while|for|try|catch|del|import|define|sig|raise|errortag|yield)\\b"
+					"match": "\\b(and|or|only|to|skip|new|if|elif|else|while|for|try|catch|del|import|define|sig|raise|errortag|yield|ret)\\b"
 				},
 				{
 					"name": "entity.name.method.mdcl",
@@ -39,7 +40,7 @@
 				},
 				{
 					"name": "entity.name.tag.mdcl",
-					"match": "(\\*|@|\\!|FILE|LINE|\\_|\\,|ERR|PATH)"
+					"match": "(\\*|@|\\!|LINE|\\_|\\,|ERR|PATH)"
 				},
 				{
 					"name": "entity.name.type.mdcl",
@@ -85,18 +86,29 @@
 			}]
 		},
 		"bracketstatement": {
-			"name": "constant.language.mdcl",
 			"begin": "\\[",
 			"end": "\\]",
-			"patterns": [{
-				"name": "string.quoted.mdcl",
-				"match": "(:|\\,)"
-			}]
+			"captures": {
+				"0": {"name": "constant.language.mdcl"}
+			}
+		},
+		"functions": {
+			"name": "function.mdcl",
+			"begin": "([a-zA-Z]*)( *: *)(\\[)(.*)(\\])( *)(=>)",
+			"end": ".",
+			"patterns": [{"include": "#bracketstatement"}],
+			"beginCaptures": {
+				"1": {"name": "entity.name.function.mdcl"},
+				"2": {"name": "keyword.mdcl"},
+				"3": {"name": "constant.language.mdcl"},
+				"5": {"name": "constant.language.mdcl"},
+				"7": {"name": "keyword.mdcl"}
+			}
 		},
 		"greyopers": {
 			"patterns": [{
 				"name": "keyword.mdcl",
-				"match": "(:|;|<|>|\\(|\\)|\\+|-|\\*|/|\\^|%|=|\\|)"
+				"match": "(:|;|<|>|\\+|-|\\*|/|\\^|%|=|\\|)"
 			}]
 		},
 		"evaluations": {

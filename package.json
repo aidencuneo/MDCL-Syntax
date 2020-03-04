@@ -1,6 +1,6 @@
 {
-    "name": "mdc-lang",
-    "displayName": "MDC Lang",
+    "name": "mdcl-syntax",
+    "displayName": "MDCL Syntax",
     "description": "Syntax highlighting for MDCL",
     "version": "1.4.1",
     "publisher": "aidencuneo",

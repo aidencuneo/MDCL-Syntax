@@ -43,12 +43,16 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 > Added Slices.
 
 > ## 1.4.0
-> All uppercase keywords, statements, and function names have been renamed to lowercase.
+> All uppercase keywords, statements, and function names have been renamed to be lowercase.
 > Switched [] and ().
 > Updated keywords and changed bracket statements a little.
 
 > ## 1.4.1
 > Removed squiggly bracket syntax highlighting.
 > Added true and false highlighting.
+
+> ## 1.4.2
+> InlineFunction declaration now has the correct syntax highlighting.
+> Made some changes to brack expressions.
 
 ### While MDCL goes through the course of development, updates will be released to match the new syntax of the language.
