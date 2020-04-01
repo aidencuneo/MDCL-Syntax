@@ -55,4 +55,10 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 > InlineFunction declaration now has the correct syntax highlighting.
 > Made some changes to brack expressions.
 
+> ## 1.4.4
+> Quick update - added syntax for 'do' keyword, also moved null into the boolean section.
+> Added support for underscores in variable names.
+> Removed some unused symbols and keywords.
+> Added question mark syntax highlighting.
+
 ### While MDCL goes through the course of development, updates will be released to match the new syntax of the language.

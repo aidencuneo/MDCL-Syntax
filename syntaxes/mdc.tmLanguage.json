@@ -11,7 +11,6 @@
 		{"include": "#bracketstatement"},
 		{"include": "#functions"},
 		{"include": "#greyopers"},
-		{"include": "#evaluations"},
 		{"include": "#booleans"},
 		{"include": "#vars"},
 		{"include": "#integers"},
@@ -24,7 +23,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.mdcl",
-					"match": "\\b(and|or|only|to|skip|new|if|elif|else|while|for|try|catch|del|import|define|sig|raise|errortag|yield|ret)\\b"
+					"match": "\\b(and|or|only|to|skip|new|if|elif|else|while|for|try|catch|del|import|define|sig|raise|errortag|yield|ret|do)\\b"
 				},
 				{
 					"name": "entity.name.method.mdcl",
@@ -40,11 +39,11 @@
 				},
 				{
 					"name": "entity.name.tag.mdcl",
-					"match": "(\\*|@|\\!|LINE|\\_|\\,|ERR|PATH)"
+					"match": "(\\!|ERR|PATH)"
 				},
 				{
 					"name": "entity.name.type.mdcl",
-					"match": "\\b(integer|float|string|regex|timedelta|date|slice|boolean|array|null)\\b"
+					"match": "\\b(integer|float|string|regex|timedelta|date|slice|boolean|array)\\b"
 				}
 			]
 		},
@@ -69,7 +68,7 @@
 		},
 		"regexstringdouble": {
 			"name": "keyword.mdcl",
-			"begin": "\\bRE\"",
+			"begin": "\\bx\"",
 			"end": "\"",
 			"patterns": [{
 				"name": "constant.character.escape.mdcl",
@@ -78,7 +77,7 @@
 		},
 		"regexstringsingle": {
 			"name": "keyword.mdcl",
-			"begin": "\\bRE'",
+			"begin": "\\bx'",
 			"end": "'",
 			"patterns": [{
 				"name": "constant.character.escape.mdcl",
@@ -94,7 +93,7 @@
 		},
 		"functions": {
 			"name": "function.mdcl",
-			"begin": "([a-zA-Z]*)( *: *)(\\[)(.*)(\\])( *)(=>)",
+			"begin": "([a-zA-Z_]*)( *: *)(\\[)(.*)(\\])( *)(=>)",
 			"end": ".",
 			"patterns": [{"include": "#bracketstatement"}],
 			"beginCaptures": {
@@ -108,22 +107,13 @@
 		"greyopers": {
 			"patterns": [{
 				"name": "keyword.mdcl",
-				"match": "(:|;|<|>|\\+|-|\\*|/|\\^|%|=|\\|)"
-			}]
-		},
-		"evaluations": {
-			"name": "constant.language.mdcl",
-			"begin": "`",
-			"end": "`",
-			"patterns": [{
-				"name": "constant.character.escape.mdcl",
-				"match": "\\$\\{[0-9]*\\}"
+				"match": "(:|;|<|>|\\?|\\\\|\\+|-|\\*|/|\\^|%|=|\\|)"
 			}]
 		},
 		"booleans": {
 			"patterns": [{
 				"name": "constant.language.mdcl",
-				"match": "\\b(true|false)\\b"
+				"match": "\\b(true|false|null)\\b"
 			}]
 		},
 		"integers": {
