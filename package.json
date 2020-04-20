@@ -2,7 +2,7 @@
     "name": "mdcl-syntax",
     "displayName": "MDCL Syntax",
     "description": "Syntax highlighting for MDCL",
-    "version": "1.4.4",
+    "version": "1.4.5",
     "publisher": "aidencuneo",
     "repository": "https://github.com/aidencuneo/MDCL-Syntax",
     "engines": {
