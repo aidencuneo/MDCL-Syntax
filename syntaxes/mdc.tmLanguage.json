@@ -23,7 +23,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.mdcl",
-					"match": "\\b(and|or|only|to|skip|new|if|elif|else|while|for|try|catch|del|import|define|sig|raise|errortag|yield|ret|do)\\b"
+					"match": "\\b(to|skip|new|if|elif|else|while|for|try|catch|del|import|define|raise|yield|ret|do)\\b"
 				},
 				{
 					"name": "entity.name.method.mdcl",
@@ -31,7 +31,7 @@
 				},
 				{
 					"name": "keyword.mdcl",
-					"match": "\\b(add|sub|mult|div|pwr|eq|lt|gt|le|ge|has|call)\\b"
+					"match": "\\b(or|and|in|not)\\b"
 				},
 				{
 					"name": "entity.name.function.mdcl",
@@ -62,9 +62,13 @@
 			}]
 		},
 		"rawstrings": {
-			"name": "string.quoted.single.mdcl",
+			"name": "string.quoted.double.mdcl",
 			"begin": "'",
-			"end": "'"
+			"end": "'",
+			"patterns": [{
+				"name": "constant.character.escape.mdcl",
+				"match": "\\\\."
+			}]
 		},
 		"regexstringdouble": {
 			"name": "keyword.mdcl",

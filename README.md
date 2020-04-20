@@ -61,4 +61,7 @@ GitHub Repository: https://github.com/aidencuneo/MDCL-Syntax
 > Removed some unused symbols and keywords.
 > Added question mark syntax highlighting.
 
+> ## 1.4.5
+> Fixed some things that changed between 1.6.8 and 2.0.0 of MDCL.
+
 ### While MDCL goes through the course of development, updates will be released to match the new syntax of the language.
